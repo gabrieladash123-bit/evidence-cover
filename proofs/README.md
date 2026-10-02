@@ -1,5 +1,8 @@
 # Verified StudioNet execution
 
+[Three additional gasless scenario proofs](studio-scenarios/README.md) show a
+cheaper bundle, an equal-cost tie and rejection of a deceptive bid.
+
 Main contract: `0x8d0ae7332edFd1E51d03f02563944429881Bbc5f`.
 
 | Scenario | Contract | Verified outcome |

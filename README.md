@@ -74,7 +74,7 @@ The process hook defaults to StudioNet. Set `EVIDENCECOVER_NETWORK=testnet-bradb
 for public testnet deployment using a funded account. Published live proofs use
 StudioNet; public testnet deployment requires GEN funding.
 
-[Bradbury scenario runner](docs/public-testnet.md) covers bundle selection,
+[Scenario runner](docs/scenarios.md) covers bundle selection,
 the equal-cost tie-break and a deceptive cheap bid. Its expected outcomes are
 checked against actual finalized execution before receipts are published.
 

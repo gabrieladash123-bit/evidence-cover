@@ -7,12 +7,16 @@ const root = path.resolve(__dirname, '..');
 const cli = process.env.GENLAYER_CLI_PATH;
 if (!cli || !fs.existsSync(cli)) throw Error('Set GENLAYER_CLI_PATH to the installed GenLayer CLI entry point.');
 const hook = path.join(__dirname, 'cli-config.cjs');
-const journal = path.join(root, 'artifacts/bradbury-journal');
-const proofs = path.join(root, 'proofs/bradbury');
+const network = process.env.EVIDENCECOVER_NETWORK || 'studionet';
+if (!['studionet', 'testnet-bradbury'].includes(network)) throw Error('Unsupported network.');
+const isStudio = network === 'studionet';
+const rpcUrl = isStudio ? 'https://studio.genlayer.com/api' : 'https://rpc-bradbury.genlayer.com';
+const journal = path.join(root, 'artifacts/' + network + '-scenario-journal');
+const proofs = path.join(root, 'proofs/' + (isStudio ? 'studio-scenarios' : 'bradbury'));
 fs.mkdirSync(journal, { recursive: true });
 fs.mkdirSync(proofs, { recursive: true });
-const buyer = process.env.EVIDENCECOVER_BUYER || 'deployer';
-const buyerAddress = '0xb527e6bd582b49782d6d303d63c6af14d4a676f9';
+const buyer = isStudio ? 'studio-proof-deployer' : 'deployer';
+const buyerAddress = isStudio ? '0x7a413bb4ab62e31d62d4cd9efc8c8a8dae37fb42' : '0xb527e6bd582b49782d6d303d63c6af14d4a676f9';
 const suppliers = [
   { account: buyer, address: buyerAddress },
   { account: 'fairresolve-demo', address: '0x34346773a22564cbcc5f1d67d1c1f9f196daea35' },
@@ -57,7 +61,7 @@ async function invoke(label, account, args, overrides = {}) {
   console.log('RUN', label);
   return new Promise((resolve, reject) => {
     const child = cp.spawn(process.execPath, ['--require', hook, cli, ...args], {
-      cwd: root, windowsHide: true, env: { ...process.env, NO_COLOR: '1', EVIDENCECOVER_ACCOUNT: account, EVIDENCECOVER_NETWORK: 'testnet-bradbury', ...overrides },
+      cwd: root, windowsHide: true, env: { ...process.env, NO_COLOR: '1', EVIDENCECOVER_ACCOUNT: account, EVIDENCECOVER_NETWORK: network, ...overrides },
       stdio: ['ignore', 'pipe', 'pipe'],
     });
     let stdout = '', stderr = '', hash = prior.hash;
@@ -95,17 +99,18 @@ async function write(label, address, account, method, args = []) {
   return { action: method, hash, receipt: await receipt(label, hash) };
 }
 async function rpc(method, params) {
-  const response = await fetch('https://rpc-bradbury.genlayer.com', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }), signal: AbortSignal.timeout(30000) });
+  const response = await fetch(rpcUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }), signal: AbortSignal.timeout(30000) });
   const data = await response.json();
   if (!response.ok || data.error) throw Error(JSON.stringify(data.error || response.status));
   return data.result;
 }
 (async () => {
-  if (await rpc('eth_chainId', []) !== '0x107d') throw Error('Unexpected chain ID.');
+  const expectedChain = isStudio ? '0xf22f' : '0x107d';
+  if (await rpc('eth_chainId', []) !== expectedChain) throw Error('Unexpected chain ID.');
   for (const supplier of suppliers) {
     const account = await invoke('account-' + supplier.account, supplier.account, ['account', 'show', '--account', supplier.account]);
     if (!account.toLowerCase().includes(supplier.address)) throw Error('Account address mismatch.');
-    if (BigInt(await rpc('eth_getBalance', [supplier.address, 'latest'])) === 0n) throw Error('Account needs test GEN: ' + supplier.account);
+    if (!isStudio && BigInt(await rpc('eth_getBalance', [supplier.address, 'latest'])) === 0n) throw Error('Account needs test GEN: ' + supplier.account);
   }
   for (const scenario of scenarios) {
     const offers = [];
@@ -136,9 +141,13 @@ async function rpc(method, params) {
     const output = await invoke(scenario.name + '-source', buyer, ['code', address]);
     const sourceStart = output.indexOf('# { "Depends":');
     if (sourceStart < 0 || output.slice(sourceStart, sourceStart + source.length) !== source.toString()) throw Error('Deployed source mismatch.');
-    const ghostCode = await rpc('eth_getCode', [address, 'latest']);
-    if (!ghostCode || ghostCode === '0x') throw Error('Ghost contract missing on underlying chain.');
-    save(scenario.name, { network: 'testnet-bradbury', chain_id: 4221, contract_address: address, source_commit: sourceCommit, source_sha256: sourceHash, exact_source_match: true, ghost_code_sha256: crypto.createHash('sha256').update(Buffer.from(ghostCode.slice(2), 'hex')).digest('hex'), transactions: transactions.map(({ action, hash }) => ({ action, hash })), offers, allocation, assessment, board });
+    const chainProof = {};
+    if (!isStudio) {
+      const ghostCode = await rpc('eth_getCode', [address, 'latest']);
+      if (!ghostCode || ghostCode === '0x') throw Error('Ghost contract missing on underlying chain.');
+      chainProof.ghost_code_sha256 = crypto.createHash('sha256').update(Buffer.from(ghostCode.slice(2), 'hex')).digest('hex');
+    }
+    save(scenario.name, { network, chain_id: isStudio ? 61999 : 4221, contract_address: address, source_commit: sourceCommit, source_sha256: sourceHash, exact_source_match: true, ...chainProof, transactions: transactions.map(({ action, hash }) => ({ action, hash })), offers, allocation, assessment, board });
     console.log('VERIFIED', scenario.name, address);
   }
 })().catch(error => { console.error(error.message); process.exitCode = 1; });
