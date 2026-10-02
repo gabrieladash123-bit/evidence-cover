@@ -1,0 +1,10 @@
+{
+  "network": "studionet",
+  "contract_address": "0x99b37bACF3072D61848EEbF74877650bebC34572",
+  "failed_transaction": "0x9ce219ab4f391aa396660989e6f1c991999edb1050d4f29961ad9fa67d8ce1ac",
+  "status": "FINALIZED",
+  "leader_execution": "ERROR",
+  "error": "[LLM_ERROR] Supporting quote absent from fetched evidence",
+  "observed_phase_after_failed_clear": "SEALED",
+  "observation": "get_auction read before retry; immutable offers remained unchanged"
+}

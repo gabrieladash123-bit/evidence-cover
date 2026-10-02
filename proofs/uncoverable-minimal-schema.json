@@ -1,0 +1,73 @@
+{
+  "ctor": {
+    "params": [
+      [
+        "requirements_json",
+        "string"
+      ],
+      [
+        "suppliers_json",
+        "string"
+      ],
+      [
+        "budget",
+        "int"
+      ]
+    ],
+    "kwparams": {}
+  },
+  "methods": {
+    "clear": {
+      "params": [],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "null",
+      "payable": false
+    },
+    "get_allocation": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "get_assessment": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "get_auction": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "seal": {
+      "params": [],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "null",
+      "payable": false
+    },
+    "submit_offer": {
+      "params": [
+        [
+          "evidence_url",
+          "string"
+        ],
+        [
+          "evidence_sha256",
+          "string"
+        ],
+        [
+          "cost",
+          "int"
+        ]
+      ],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "null",
+      "payable": false
+    }
+  }
+}

@@ -25,7 +25,7 @@ fs.readFileSync = function(file, ...args) {
   if (process.env.EVIDENCECOVER_ACCOUNT && typeof file === 'string' && path.resolve(file) === configPath) {
     const config = JSON.parse(String(content));
     config.activeAccount = process.env.EVIDENCECOVER_ACCOUNT;
-    config.network = 'studionet';
+    config.network = process.env.EVIDENCECOVER_NETWORK || 'studionet';
     const text = JSON.stringify(config);
     return typeof content === 'string' ? text : Buffer.from(text);
   }

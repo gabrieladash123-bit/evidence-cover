@@ -1,0 +1,84 @@
+{
+  "network": "studionet",
+  "buyer_account": "studio-proof-deployer",
+  "contract_address": "0x4B3C7a82Dde6145b18c19e9bdd162A67345e626E",
+  "deployment_transaction": "0x74c780322e14fa9dba6289478c21514abc1422a874e7580881e0a66be0320199",
+  "source_commit": "ea715ddb88160f1f564cf3f73bfa6c98f1325517",
+  "source_sha256": "a5674a513a2b203147e7badfc4e25b30547c482d4558ac80d0952b9565792c75",
+  "transactions": [
+    {
+      "action": "deploy",
+      "hash": "0x74c780322e14fa9dba6289478c21514abc1422a874e7580881e0a66be0320199"
+    },
+    {
+      "action": "offer-0",
+      "hash": "0x482d640f42cafaa0495bd1cbc434ca8f3b3217dc4f9a8c8ad740f6af8dc1c604"
+    },
+    {
+      "action": "seal",
+      "hash": "0x26631304a1b0ad514035101bc25c0562caa8e9bc01a8d2e277f5bbf1d67d1dc8"
+    },
+    {
+      "action": "clear",
+      "hash": "0x444c112657541f32fef5c390aa328fa9eff561f1e28e6b3cd29f815e7b33c06b"
+    }
+  ],
+  "allocation": {
+    "cost": 0,
+    "evidence_root": "dbb9c4d7e81413ef0c32545121f908034c279fd9ca4319d7f6e8b426bbebe2ad",
+    "minimum_cost": 0,
+    "reachable_mask": 0,
+    "selected": [],
+    "status": "UNCOVERABLE",
+    "suppliers": []
+  },
+  "assessment": {
+    "offers": [
+      {
+        "checks": [
+          {
+            "quote": "",
+            "requirement": "xml",
+            "verdict": "UNSUPPORTED"
+          }
+        ],
+        "index": 0,
+        "mask": 0
+      }
+    ]
+  },
+  "board": {
+    "budget": 10,
+    "buyer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+    "offers": [
+      {
+        "cost": 4,
+        "sha256": "9d554879a87e9de1c009f3f98c50fe0ae6378fb4389c1b3b8496b2ae71a90851",
+        "supplier": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+        "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/csv-tool.md"
+      }
+    ],
+    "phase": "UNCOVERABLE",
+    "requirements": [
+      {
+        "criterion": "Documented capability to validate XML records against an XML Schema Definition (XSD).",
+        "id": "xml"
+      }
+    ]
+  },
+  "clear_validator_votes": [
+    "idle",
+    "agree",
+    "idle",
+    "agree"
+  ],
+  "evidence": [
+    {
+      "address": "0x7a413bb4ab62e31d62d4cd9efc8c8a8dae37fb42",
+      "file": "csv-tool.md",
+      "cost": 4,
+      "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/csv-tool.md",
+      "sha256": "9d554879a87e9de1c009f3f98c50fe0ae6378fb4389c1b3b8496b2ae71a90851"
+    }
+  ]
+}

@@ -3,6 +3,7 @@
   "lint": "PASS: AST safety and SDK validation",
   "direct_tests": "26 passed",
   "live_read_tests": "3 passed against the finalized main StudioNet deployment",
+  "live_outcomes": ["CLEARED", "OVER_BUDGET", "UNCOVERABLE"],
   "test_sdk_archive": "v0.2.16",
   "versions": {
     "python": "3.12.14",

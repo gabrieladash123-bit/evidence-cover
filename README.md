@@ -2,6 +2,8 @@
 
 **A cheap offer is useless if it leaves a requirement uncovered.** EvidenceCover clears a bounded reverse combinatorial auction over independently verified documentary capabilities. It selects the globally cheapest portfolio covering every buyer requirement.
 
+[Verified StudioNet deployment and consensus receipts](proofs/README.md).
+
 ## Why consensus matters
 
 Suppliers submit a price and a SHA-256 commitment to a commit-pinned public document. They do not submit coverage labels. The leader and validators each fetch the actual bytes and independently interpret every document against every requirement. Exact coverage-vector agreement authorizes the optimizer; one changed bit can change the winners or make the auction infeasible. Supporting quotes must occur in the fetched evidence.
@@ -67,6 +69,10 @@ existing CLI account per process without changing global configuration:
 node --require ./scripts/cli-config.cjs "$GENLAYER_CLI_PATH" deploy
 EVIDENCECOVER_LIVE=1 gltest tests/integration/ -v
 ```
+
+The process hook defaults to StudioNet. Set `EVIDENCECOVER_NETWORK=testnet-bradbury`
+for public testnet deployment using a funded account. Published live proofs use
+StudioNet; public testnet deployment requires GEN funding.
 
 The Depends header pins an immutable GenVM runner. Read proofs before treating a deployment as verified. FINALIZED lifecycle and SUCCESS execution are checked separately.
 
