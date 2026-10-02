@@ -1,0 +1,189 @@
+{
+  "hash": "0xa580f0e43fdba7e5c8d44715b270ac3ffa9d749c41f3cb9e284321a0113c83bd",
+  "from_address": "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35",
+  "to_address": "0xe153Dd331BBAF4f899b97F44Ff9a727dF2d819B4",
+  "data": {
+    "calldata": {
+      "readable": "{\"method\":\"clear\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "agree",
+      "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "idle",
+      "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+      "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "idle"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"method\":\"clear\"}"
+        },
+        "eq_outputs": {
+          "0": {
+            "status": "return",
+            "payload": {
+              "readable": "{\"documents\":[\"# Synthetic offer: TableBridge\\n\\nEducational fixture, not a real vendor or service-delivery attestation.\\n\\nTableBridge converts comma-separated text into structured rows. Its parser treats\\ncommas inside double-quoted fields as field content and handles escaped quotes.\\nThe output is a list of records with named columns.\\n\\nTableBridge operates on local files only. It does not retrieve HTTP resources,\\nretry network requests, or provide web authentication.\\n\",\"# Synthetic offer: FetchLane\\n\\nEducational fixture, not a real vendor or service-delivery attestation.\\n\\nFetchLane retrieves remote data over HTTP. Failed requests are retried with\\nbounded exponential backoff, and each attempt has an explicit timeout.\\nIts output is the unparsed response body.\\n\\nFetchLane does not parse CSV, split records, or handle quoted field delimiters.\\n\",\"# Synthetic offer: PipelineBox\\n\\nEducational fixture, not a real vendor or service-delivery attestation.\\n\\nPipelineBox retrieves remote HTTP data with bounded retries and request timeouts.\\nIt then converts comma-separated text into structured records, preserving commas\\ninside double-quoted fields and interpreting escaped quotes correctly.\\n\\nBoth operations are available together in one documented capability bundle.\\nThis document makes no claim about XML processing, ownership, delivery, security,\\nor payment.\\n\",]\"report\":{\"offers\":[{\"checks\":[{\"quote\":\"TableBridge converts comma-separated text into structured rows. Its parser treats\\ncommas inside double-quoted fields as field content and handles escaped quotes.\"\"requirement\":\"csv\"\"verdict\":\"SUPPORTED\"},{\"quote\":\"\"\"requirement\":\"http\"\"verdict\":\"UNSUPPORTED\"},]\"index\":0\"mask\":1},{\"checks\":[{\"quote\":\"\"\"requirement\":\"csv\"\"verdict\":\"UNSUPPORTED\"},{\"quote\":\"FetchLane retrieves remote data over HTTP. Failed requests are retried with\\nbounded exponential backoff, and each attempt has an explicit timeout.\"\"requirement\":\"http\"\"verdict\":\"SUPPORTED\"},]\"index\":1\"mask\":2},{\"checks\":[{\"quote\":\"converts comma-separated text into structured records, preserving commas\\ninside double-quoted fields and interpreting escaped quotes correctly.\"\"requirement\":\"csv\"\"verdict\":\"SUPPORTED\"},{\"quote\":\"PipelineBox retrieves remote HTTP data with bounded retries and request timeouts.\"\"requirement\":\"http\"\"verdict\":\"SUPPORTED\"},]\"index\":2\"mask\":3},]}}"
+            }
+          }
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree",
+        "calldata": {
+          "readable": "{\"method\":\"clear\"}"
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "Validator execution cancelled after quorum",
+          "stdout": "",
+          "raw_error": {
+            "fatal": false,
+            "causes": [
+              "VALIDATOR_QUORUM_REACHED"
+            ]
+          },
+          "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+        },
+        "mode": "validator",
+        "vote": "idle"
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "Validator execution cancelled after quorum",
+          "stdout": "",
+          "raw_error": {
+            "fatal": false,
+            "causes": [
+              "VALIDATOR_QUORUM_REACHED"
+            ]
+          },
+          "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+        },
+        "mode": "validator",
+        "vote": "idle"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      }
+    ]
+  },
+  "gaslimit": 9,
+  "nonce": 9,
+  "created_at": "2026-10-02T13:42:51.431837+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf9014809808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b8e427241a9900000000000000000000000034346773a22564cbcc5f1d67d1c1f9f196daea35000000000000000000000000e153dd331bbaf4f899b97f44ff9a727df2d819b40000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000011d08e0e066d6574686f642c636c656172000000000000000000000000000000008301e482a044d957458ea579dfbe8ebafbeafab94f00b0edc52a0744984db06bbd8ef342f2a02381a51df2cd0b1625199512928d8f5ee9564f0b52b6e26d4ef30e28b0e1198b"
+  },
+  "value_credited": false,
+  "sender": "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35",
+  "recipient": "0xe153Dd331BBAF4f899b97F44Ff9a727dF2d819B4",
+  "tx_id": "0xa580f0e43fdba7e5c8d44715b270ac3ffa9d749c41f3cb9e284321a0113c83bd",
+  "activator": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+  "last_leader": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "1",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "3",
+    "result": 6,
+    "round_validators": [
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+      "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC",
+      "0xE6BD8050758CB15fC88387223E31Ae2708B119dC",
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+      "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+    ],
+    "validator_votes_hash": [
+      "0x5e524ae2b0c43561e8bb743e61462f618e82fce3d45c819d85385e97b902766b",
+      "0xc4e07c4eeba0b53a77b8c6f164f8bfe108fa6a8d421cc57590037d0a8eaf736a",
+      "0x1e133c61fabad440220866dd95890562233ff821f5d5d265d920ab40022d26cb",
+      "0x7c0c28d90439673ea2d4b817f7ac8fa7914b1621823d06874338c7ed5fc613b0",
+      "0xcb009bcdbfeae73f0d0208fb453c414a117b78852f9e0ae368874caa6452a2a0"
+    ],
+    "validator_votes": [
+      1,
+      5,
+      5,
+      1,
+      1
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "IDLE",
+      "IDLE",
+      "AGREE",
+      "AGREE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}

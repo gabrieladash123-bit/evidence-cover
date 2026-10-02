@@ -1,0 +1,165 @@
+{
+  "network": "studionet",
+  "buyer_account": "studio-proof-deployer",
+  "contract_address": "0x8d0ae7332edFd1E51d03f02563944429881Bbc5f",
+  "deployment_transaction": "0xfd6b556736ee89e623469f2033a3066495e502cc624e69b9ffaa33a28e7446c0",
+  "source_commit": "ea715ddb88160f1f564cf3f73bfa6c98f1325517",
+  "source_sha256": "a5674a513a2b203147e7badfc4e25b30547c482d4558ac80d0952b9565792c75",
+  "transactions": [
+    {
+      "action": "deploy",
+      "hash": "0xfd6b556736ee89e623469f2033a3066495e502cc624e69b9ffaa33a28e7446c0"
+    },
+    {
+      "action": "offer-0",
+      "hash": "0x6298800562d8e7fb1002b670ee96e68666de7c159a01291a2c02b4f4a83b5feb"
+    },
+    {
+      "action": "offer-1",
+      "hash": "0x02ae3fec1f0e76204a606bfc550a702d8aef59c64e971597f6dd43cdc23e4ad7"
+    },
+    {
+      "action": "offer-2",
+      "hash": "0x0e0a6d65029a1d738de684dc3b807ac64a76e908f62fd8586f0337b80b2b9a02"
+    },
+    {
+      "action": "seal",
+      "hash": "0x3793d2e64b30d4cb7553968c2c577e41eeec00d15e18decb38f42e4819e10a35"
+    },
+    {
+      "action": "clear",
+      "hash": "0xeaee82246986eac06b81e1c24998d8b1b0151fd314b70008ca9b064a2a55522f"
+    }
+  ],
+  "allocation": {
+    "cost": 9,
+    "evidence_root": "0878da4466d6579ea9ff57cef449e6788a3811d0621310d4bed7b184e2bf3dce",
+    "minimum_cost": 9,
+    "reachable_mask": 3,
+    "selected": [
+      0,
+      1
+    ],
+    "status": "CLEARED",
+    "suppliers": [
+      "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35"
+    ]
+  },
+  "assessment": {
+    "offers": [
+      {
+        "checks": [
+          {
+            "quote": "TableBridge converts comma-separated text into structured rows. Its parser treats\ncommas inside double-quoted fields as field content and handles escaped quotes.",
+            "requirement": "csv",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "quote": "",
+            "requirement": "http",
+            "verdict": "UNSUPPORTED"
+          }
+        ],
+        "index": 0,
+        "mask": 1
+      },
+      {
+        "checks": [
+          {
+            "quote": "",
+            "requirement": "csv",
+            "verdict": "UNSUPPORTED"
+          },
+          {
+            "quote": "FetchLane retrieves remote data over HTTP. Failed requests are retried with\nbounded exponential backoff, and each attempt has an explicit timeout.",
+            "requirement": "http",
+            "verdict": "SUPPORTED"
+          }
+        ],
+        "index": 1,
+        "mask": 2
+      },
+      {
+        "checks": [
+          {
+            "quote": "converts comma-separated text into structured records, preserving commas\ninside double-quoted fields and interpreting escaped quotes correctly.",
+            "requirement": "csv",
+            "verdict": "SUPPORTED"
+          },
+          {
+            "quote": "PipelineBox retrieves remote HTTP data with bounded retries and request timeouts.",
+            "requirement": "http",
+            "verdict": "SUPPORTED"
+          }
+        ],
+        "index": 2,
+        "mask": 3
+      }
+    ]
+  },
+  "board": {
+    "budget": 10,
+    "buyer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+    "offers": [
+      {
+        "cost": 4,
+        "sha256": "9d554879a87e9de1c009f3f98c50fe0ae6378fb4389c1b3b8496b2ae71a90851",
+        "supplier": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+        "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/csv-tool.md"
+      },
+      {
+        "cost": 5,
+        "sha256": "e9fbaa9d4880bd0864ef9f7641a38c5e5d921b4bbbd0ad6f4a46a24469f6cd2f",
+        "supplier": "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35",
+        "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/http-tool.md"
+      },
+      {
+        "cost": 12,
+        "sha256": "54b80c3aeaf9924166d52ab89a48b28caf47cc8ca1595856f19598ab62d69cc6",
+        "supplier": "0x5585Ea8f2FCC126bad0830EB9701E19b3CD800D5",
+        "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/bundle-tool.md"
+      }
+    ],
+    "phase": "CLEARED",
+    "requirements": [
+      {
+        "criterion": "Documented capability to parse comma-separated text into structured rows while preserving commas inside double-quoted fields.",
+        "id": "csv"
+      },
+      {
+        "criterion": "Documented capability to retrieve remote HTTP data with bounded retries and request timeouts.",
+        "id": "http"
+      }
+    ]
+  },
+  "clear_validator_votes": [
+    "disagree",
+    "agree",
+    "agree",
+    "idle"
+  ],
+  "evidence": [
+    {
+      "address": "0x7a413bb4ab62e31d62d4cd9efc8c8a8dae37fb42",
+      "file": "csv-tool.md",
+      "cost": 4,
+      "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/csv-tool.md",
+      "sha256": "9d554879a87e9de1c009f3f98c50fe0ae6378fb4389c1b3b8496b2ae71a90851"
+    },
+    {
+      "address": "0x34346773a22564cbcc5f1d67d1c1f9f196daea35",
+      "file": "http-tool.md",
+      "cost": 5,
+      "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/http-tool.md",
+      "sha256": "e9fbaa9d4880bd0864ef9f7641a38c5e5d921b4bbbd0ad6f4a46a24469f6cd2f"
+    },
+    {
+      "address": "0x5585ea8f2fcc126bad0830eb9701e19b3cd800d5",
+      "file": "bundle-tool.md",
+      "cost": 12,
+      "url": "https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/bundle-tool.md",
+      "sha256": "54b80c3aeaf9924166d52ab89a48b28caf47cc8ca1595856f19598ab62d69cc6"
+    }
+  ]
+}

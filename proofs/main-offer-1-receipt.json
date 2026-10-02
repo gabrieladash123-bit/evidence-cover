@@ -1,0 +1,174 @@
+{
+  "hash": "0x02ae3fec1f0e76204a606bfc550a702d8aef59c64e971597f6dd43cdc23e4ad7",
+  "from_address": "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35",
+  "to_address": "0x8d0ae7332edFd1E51d03f02563944429881Bbc5f",
+  "data": {
+    "calldata": {
+      "readable": "{\"args\":[\"https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/http-tool.md\",\"e9fbaa9d4880bd0864ef9f7641a38c5e5d921b4bbbd0ad6f4a46a24469f6cd2f\",5,]\"method\":\"submit_offer\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+      "0x4404Fb70d490c935758146f42A73DC850FF95C71": "agree",
+      "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+      "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
+      "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "agree"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/http-tool.md\",\"e9fbaa9d4880bd0864ef9f7641a38c5e5d921b4bbbd0ad6f4a46a24469f6cd2f\",5,]\"method\":\"submit_offer\"}"
+        },
+        "eq_outputs": {},
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree",
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/http-tool.md\",\"e9fbaa9d4880bd0864ef9f7641a38c5e5d921b4bbbd0ad6f4a46a24469f6cd2f\",5,]\"method\":\"submit_offer\"}"
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      }
+    ]
+  },
+  "gaslimit": 6,
+  "nonce": 6,
+  "created_at": "2026-10-02T13:34:52.052240+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf9022906808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901c427241a9900000000000000000000000034346773a22564cbcc5f1d67d1c1f9f196daea350000000000000000000000008d0ae7332edfd1e51d03f02563944429881bbc5f0000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000e8f8e6b8e31604617267731d9c0868747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6761627269656c61646173683132332d6269742f65766964656e63652d636f7665722f656137313564646238383136306631663536346366336637336266613663393866313332353531372f66697874757265732f687474702d746f6f6c2e6d6484046539666261613964343838306264303836346566396637363431613338633565356439323162346262626430616436663461343661323434363966366364326629066d6574686f64647375626d69745f6f66666572000000000000000000000000000000000000000000000000008301e482a0fd7c6245515f6d3690701b85bbd6c091fae107078f745c7290df349c0460489fa07f492d44784136b48044e256d542ad37a097e7059795827f7140e3a98b800b50"
+  },
+  "value_credited": false,
+  "sender": "0x34346773a22564cbcc5F1D67D1c1F9f196DaEA35",
+  "recipient": "0x8d0ae7332edFd1E51d03f02563944429881Bbc5f",
+  "tx_id": "0x02ae3fec1f0e76204a606bfc550a702d8aef59c64e971597f6dd43cdc23e4ad7",
+  "activator": "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88",
+  "last_leader": "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "1",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "3",
+    "result": 6,
+    "round_validators": [
+      "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88",
+      "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658",
+      "0x4404Fb70d490c935758146f42A73DC850FF95C71",
+      "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2",
+      "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+    ],
+    "validator_votes_hash": [
+      "0xc0cc7670f29b6aa113e2675ef65494e4bc150abfc083485d9216525074cfb203",
+      "0x42958cf1405baca9d4fb5779a3dfe8b4b47a090ef4f4a86b54656684a9447987",
+      "0xfc5a345a4230f9239b46d1d402c964db3dd33ab2240cd5b4caf734439710e9e0",
+      "0x898135d5a8155e12a44370815d2252333926626716d7dfa78384805990f5e47b",
+      "0x7abe41550bb45509ef241c9089d7b4f9dd1895aa899739e1783e123272c32353"
+    ],
+    "validator_votes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "AGREE",
+      "AGREE",
+      "AGREE",
+      "AGREE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}

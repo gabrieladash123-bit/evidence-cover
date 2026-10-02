@@ -49,9 +49,23 @@ Use Python 3.12+ and the GenLayer CLI.
 
 ```sh
 pip install -r requirements.txt
+genvm-lint download --version v0.2.16
 genvm-lint check contracts/evidence_cover.py --json
 pytest tests/direct/ -v
 genlayer network set studionet
+```
+
+Deploy from the repository root with `deploy/00_auction.js`. Set
+`EVIDENCECOVER_REQUIREMENTS_JSON` to the JSON array of `{id, criterion}` records,
+`EVIDENCECOVER_SUPPLIERS_JSON` to the JSON array of invited addresses, and
+`EVIDENCECOVER_BUDGET` to an integer. Run `genlayer deploy`; the script passes the
+JSON strings directly to the SDK and rejects unsuccessful execution. Set
+`EVIDENCECOVER_ACCOUNT` and preload `scripts/cli-config.cjs` when selecting an
+existing CLI account per process without changing global configuration:
+
+```sh
+node --require ./scripts/cli-config.cjs "$GENLAYER_CLI_PATH" deploy
+EVIDENCECOVER_LIVE=1 gltest tests/integration/ -v
 ```
 
 The Depends header pins an immutable GenVM runner. Read proofs before treating a deployment as verified. FINALIZED lifecycle and SUCCESS execution are checked separately.

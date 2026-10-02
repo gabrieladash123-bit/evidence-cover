@@ -1,0 +1,178 @@
+{
+  "hash": "0x0e0a6d65029a1d738de684dc3b807ac64a76e908f62fd8586f0337b80b2b9a02",
+  "from_address": "0x5585Ea8f2FCC126bad0830EB9701E19b3CD800D5",
+  "to_address": "0x8d0ae7332edFd1E51d03f02563944429881Bbc5f",
+  "data": {
+    "calldata": {
+      "readable": "{\"args\":[\"https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/bundle-tool.md\",\"54b80c3aeaf9924166d52ab89a48b28caf47cc8ca1595856f19598ab62d69cc6\",12,]\"method\":\"submit_offer\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+      "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb": "agree",
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "agree",
+      "0x4404Fb70d490c935758146f42A73DC850FF95C71": "idle",
+      "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "agree"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/bundle-tool.md\",\"54b80c3aeaf9924166d52ab89a48b28caf47cc8ca1595856f19598ab62d69cc6\",12,]\"method\":\"submit_offer\"}"
+        },
+        "eq_outputs": {},
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree",
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/gabrieladash123-bit/evidence-cover/ea715ddb88160f1f564cf3f73bfa6c98f1325517/fixtures/bundle-tool.md\",\"54b80c3aeaf9924166d52ab89a48b28caf47cc8ca1595856f19598ab62d69cc6\",12,]\"method\":\"submit_offer\"}"
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "Validator execution cancelled after quorum",
+          "stdout": "",
+          "raw_error": {
+            "fatal": false,
+            "causes": [
+              "VALIDATOR_QUORUM_REACHED"
+            ]
+          },
+          "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+        },
+        "mode": "validator",
+        "vote": "idle"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      }
+    ]
+  },
+  "gaslimit": 12,
+  "nonce": 12,
+  "created_at": "2026-10-02T13:35:45.028820+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0x5585Ea8f2FCC126bad0830EB9701E19b3CD800D5",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf902290c808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901c427241a990000000000000000000000005585ea8f2fcc126bad0830eb9701e19b3cd800d50000000000000000000000008d0ae7332edfd1e51d03f02563944429881bbc5f0000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000eaf8e8b8e51604617267731dac0868747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6761627269656c61646173683132332d6269742f65766964656e63652d636f7665722f656137313564646238383136306631663536346366336637336266613663393866313332353531372f66697874757265732f62756e646c652d746f6f6c2e6d6484043534623830633361656166393932343136366435326162383961343862323863616634376363386361313539353835366631393539386162363264363963633661066d6574686f64647375626d69745f6f6666657200000000000000000000000000000000000000000000008301e482a0707f2b05962f55b4fb259c17d070dae9374430cdf4ce98374daec3ea895d0a01a00309c767053ddfbf88f5846c0b8d807b908f16d4fb513803e75c2c45fa3e3845"
+  },
+  "value_credited": false,
+  "sender": "0x5585Ea8f2FCC126bad0830EB9701E19b3CD800D5",
+  "recipient": "0x8d0ae7332edFd1E51d03f02563944429881Bbc5f",
+  "tx_id": "0x0e0a6d65029a1d738de684dc3b807ac64a76e908f62fd8586f0337b80b2b9a02",
+  "activator": "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC",
+  "last_leader": "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "1",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "3",
+    "result": 6,
+    "round_validators": [
+      "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC",
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+      "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb",
+      "0x4404Fb70d490c935758146f42A73DC850FF95C71",
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+    ],
+    "validator_votes_hash": [
+      "0x088df51ecb463caf5f452b0163a8257fe0b0e7baee2711cf2d77403de67efe25",
+      "0x97eec5a452dcd33e271347c28699ede28d557219dcc12f6c631e49e323678f9a",
+      "0xf5ce42d7c03ebcfff61365caa6ffbf6b2e639f91755533da72ac5d528df239ab",
+      "0xe4e47c2dd733577fe98697c9b548aa15b47e9d165dab056950e38eb137c305b2",
+      "0x34067007a7ee19f0f7772a42b561bcfd3c7d5fc0eef528ac0fe5f485d4f03111"
+    ],
+    "validator_votes": [
+      1,
+      1,
+      1,
+      5,
+      1
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "AGREE",
+      "AGREE",
+      "IDLE",
+      "AGREE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}

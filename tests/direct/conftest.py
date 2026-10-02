@@ -19,6 +19,14 @@ def address_text(address):
     return address if isinstance(address, str) else "0x" + bytes(address).hex()
 
 
+@pytest.fixture
+def direct_deploy(direct_deploy):
+    """Use the release archive containing the contract's immutable runner."""
+    def deploy(*args, **kwargs):
+        return direct_deploy(*args, sdk_version="v0.2.16", **kwargs)
+    return deploy
+
+
 @pytest.fixture(autouse=True)
 def windows_stdin_sharing_workaround(monkeypatch):
     """gltest unlinks the injected stdin file while Windows still holds fd 0."""

@@ -2,6 +2,22 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const os = require('node:os');
+const util = require('node:util');
+const originalInspect = util.inspect;
+util.inspect = function(value, options, ...args) {
+  if (options?.depth === null && options?.colors === false) {
+    return JSON.stringify(value, (_, item) => typeof item === 'bigint' ? item.toString() : item);
+  }
+  return originalInspect.call(this, value, options, ...args);
+};
+require('node:module').syncBuiltinESMExports();
+// Emit objects as JSON so proof collection does not depend on util.inspect formatting.
+const originalLog = console.log;
+console.log = (...values) => originalLog(...values.map(value =>
+  value !== null && typeof value === 'object'
+    ? JSON.stringify(value, (_, item) => typeof item === 'bigint' ? item.toString() : item)
+    : value
+));
 const configPath = path.join(os.homedir(), '.genlayer', 'genlayer-config.json');
 const original = fs.readFileSync;
 fs.readFileSync = function(file, ...args) {
