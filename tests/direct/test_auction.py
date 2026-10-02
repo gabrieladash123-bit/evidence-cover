@@ -140,6 +140,16 @@ def test_validator_refetch_detects_changed_evidence(auction, direct_vm):
     assert direct_vm.run_validator() is False
 
 
+def test_validator_agrees_only_on_independently_observed_external_error(auction, direct_vm):
+    contract = auction()
+    contract.seal()
+    contract.clear()
+    direct_vm.clear_mocks()
+    direct_vm.mock_web(r".*", {"status": 404, "body": "missing"})
+    assert direct_vm.run_validator(leader_error=RuntimeError("[EXTERNAL] Evidence 0 HTTP 404")) is True
+    assert direct_vm.run_validator(leader_error=RuntimeError("[EXTERNAL] Evidence 1 HTTP 404")) is False
+
+
 def test_uninvited_supplier_rejected(direct_vm, direct_deploy, direct_alice, direct_bob):
     contract = direct_deploy(str(ROOT / "contracts/evidence_cover.py"), json.dumps(REQUIREMENTS), json.dumps([address_text(direct_alice)]), 10)
     direct_vm.sender = direct_bob

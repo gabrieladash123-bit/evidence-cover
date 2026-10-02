@@ -235,7 +235,7 @@ INPUT_JSON:
                 try:
                     leader()
                 except gl.vm.UserError as error:
-                    own = str(error)
+                    own = getattr(error, "message", str(error))
                     leader_error = getattr(result, "message", "")
                     return own.startswith("[EXTERNAL]") and own == leader_error
                 except Exception:

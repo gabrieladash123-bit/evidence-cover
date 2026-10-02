@@ -1,7 +1,7 @@
 {
-  "source_sha256": "45a56db70a7c6f2ae5bcacc159618463c4137f2433fd7ee1cb6b8f2c670fd62b",
+  "source_sha256": "a5674a513a2b203147e7badfc4e25b30547c482d4558ac80d0952b9565792c75",
   "lint": "PASS: AST safety and SDK validation",
-  "direct_tests": "25 passed",
+  "direct_tests": "26 passed",
   "versions": {
     "python": "3.12.14",
     "genvm_linter": "0.11.0",
